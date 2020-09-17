@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Orders</h2>
+  <mat-card>
+    <mat-card-content>
+      <table mat-table [dataSource]="orderList">
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <ng-container matColumnDef="customerName">
+          <th mat-header-cell *matHeaderCellDef>Customer Name</th>
+          <td (click)="openDialog(element)" mat-cell *matCellDef="let element">
+            <b>{{ element.customerName }}</b>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderdItems">
+          <th mat-header-cell *matHeaderCellDef># Items</th>
+          <td (click)="openDialog(element)" mat-cell *matCellDef="let element">
+            {{ element.orderdItems }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef>Total Amount</th>
+          <td (click)="openDialog(element)" mat-cell *matCellDef="let element">
+            {{ element.amount | currency }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th style="width: 200px" mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field>
+              <mat-select
+                [(value)]="element.status"
+                [disabled]="element.status === 'Completed'"
+              >
+                <mat-option *ngFor="let st of status" [value]="st">
+                  {{ st }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [length]="this.orderList.length"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+      >
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
