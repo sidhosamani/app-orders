@@ -1,6 +1,14 @@
 # AppOrders
 
+This is a angular project for managing order list.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+
+## Dependencies
+
+Angular Material is used for UI
+
+For angular folder structure I have fallowed https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7 article
 
 ## Development server
 
@@ -25,3 +33,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
