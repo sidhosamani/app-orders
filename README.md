@@ -8,7 +8,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Angular Material is used for UI
 
-For angular folder structure I have fallowed https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7 article
+For defining a highly scalable folder structure I have fallowed fallowing article
+https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7
 
 ## Development server
 
